@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"   xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index1</title>
+    <link th:href="@{demo.css}">
+</head>
+<body>
+    <!--<h1 th:text="${name}">姓名：</h1>-->
+    <!--<h2 th:text="${user.name}"></h2>-->
+    <!--<h2 th:text="${user.classes}"></h2>-->
+    <!--<h2 th:text="${user.age}"></h2>-->
+<table>
+    <th>序号</th>
+    <th>姓名</th>
+    <th>班级</th>
+    <th>年龄</th>
+    <tr th:each="user ,iterStat : ${list}">
+        <td th:text="${iterStat.index}"></td>
+        <td th:text="${user.name}"> </td>
+        <td th:text="${user.classes}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:if="${user.name=='小红3号'}">侍寝</td>
+    </tr>
+</table>
+姓名：<input type="text" th:value="${list[3].name}">
+</body>
+</html>
